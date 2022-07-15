@@ -145,6 +145,11 @@ h2 {
   color: hsl(232, 13%, 33%);
 }
 
+.Dollar {
+  font-size: 40px;
+  padding-right: 5px;
+}
+
 .LargeText {
   font-size: 65px;
 }
