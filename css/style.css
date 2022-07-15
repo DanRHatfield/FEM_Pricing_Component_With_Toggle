@@ -1,0 +1,249 @@
+/* Box Model Hack */
+* {
+  box-sizing: border-box;
+}
+
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+body {
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif; 
+  color: hsl(233, 13%, 49%); 
+  background: hsl(240, 78%, 98%);  /* Very Light Grayish Blue */
+  background-image: url(../images/bg-bottom.svg),
+  url(../images/bg-top.svg);
+  background-repeat: no-repeat, no-repeat;
+  background-position: bottom left, top right;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+main > * {
+  display: flex;     
+}
+
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+footer {
+  padding: 30px 0 0 0;
+}
+
+
+/******************************************
+/* Slider styles
+/*******************************************/
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px; 
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;  
+  background-color: white;
+  transition: .4s;  
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);  
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+.tower {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 330px;
+  height: 450px;  
+  padding: 3%;
+  border-radius: 10px;
+  background: white;
+  border: 1px solid hsla(234, 14%, 74%, 0.5); /* Light Grayish Blue */;
+  box-shadow: 1px;
+}
+
+.wrapper {
+  align-items: center;
+}
+
+.wrapper > *, .tower > * {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Hidden {
+  display: none;
+}
+
+h2 {
+  margin: 0;
+  padding: 0 0 10px 0;
+  font-size: 20px;
+}
+
+.Monthly, .Annually, .info {
+  padding: 20px 0;
+  width: 100%;
+  border-bottom: 1px solid hsl(234, 14%, 74%); /* Light Grayish Blue */;
+}
+
+.Monthly, .Annually {
+  color: hsl(232, 13%, 33%);
+}
+
+.LargeText {
+  font-size: 65px;
+}
+
+#selector {
+  justify-content: space-evenly;
+  align-items: center;
+  width: 300px;
+  height: 50px;
+  padding: 30px 0 80px;
+  color: hsl(234, 14%, 74%); /* Light Grayish Blue */
+  font-size: 14px;
+}
+
+section a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  background: linear-gradient(90deg, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+  width: 100%;
+  height: 45px; 
+  border-radius: 5px;
+  margin: 30px 0 0 0;
+  text-transform: uppercase
+}
+
+.info {
+  padding: 15px 0;  
+}
+
+.purple {
+  height: 500px;
+  background: linear-gradient(120deg, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+  color: white;
+}
+
+.purple a {
+  background:  white;
+  color: hsl(233, 13%, 49%); /* Grayish Blue */
+}
+
+.white > a:hover {
+  background:  white;
+  color: hsl(233, 13%, 49%);
+  border: 1px solid hsl(237, 63%, 64%);    
+}
+
+.purple > a:hover {
+  color: white;
+  background: hsl(237, 63%, 64%);  
+  border: 1px solid hsl(240, 78%, 98%);    
+}
+
+.purple > .LargeText {
+  color: white;
+}
+
+.Monthly {
+  display: none;
+}
+
+@media screen and (max-width: 1050px) {
+  .wrapper {    
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 1450px;
+  }
+
+  .purple {
+    height: 450px;
+  }
+
+  .tower {
+    padding: 25px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .wrapper {    
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 1450px;
+  }
+
+  .purple {
+    height: 450px;
+  }
+
+  .tower {
+    padding: 25px;
+  }
+}
+
+.tester {
+color: hsl(240, 78%, 98%);  /* Very Light Grayish Blue */
+color: hsl(234, 14%, 74%); /* Light Grayish Blue */
+color: hsl(233, 13%, 49%); /* Grayish Blue */
+color: hsl(232, 13%, 33%); /* Dark Grayish Blue */ 
+}
+
